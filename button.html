@@ -7,7 +7,23 @@
 </head>
 <body>
 
-    <button>Click me</button>
+    <button onclick="addParameter()">Click me</button>
+
+    <script>
+        function addParameter() {
+            // Get the current URL
+            var currentUrl = window.location.href;
+
+            // Check if the URL already contains a path
+            var separator = currentUrl.endsWith('/') ? '' : '/';
+
+            // Add the '/test' parameter to the URL
+            var newUrl = currentUrl + separator + 'test';
+
+            // Redirect to the new URL
+            window.location.href = newUrl;
+        }
+    </script>
 
 </body>
 </html>
